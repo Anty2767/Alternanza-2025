@@ -1,5 +1,14 @@
-// Ordinare i codici fiscali in ordine alfabetico
-// Suddividere l'array padre in n (iniziale)
+const message = 'Hello world' // Try edit me
+
+
+const messages = [];
+
+messages.push("ciao");
+
+if( "ciao" === "Ciao") {
+
+}
+
 const cf = [
     "RSSMRA85M01H501Z",
     "BNCLRD90A22F205X",
@@ -28,58 +37,11 @@ const cf = [
     "RSSMRN80Z12F612Z"
 ];
 
-// 1 - Ordinamento dell'array in ordine alfabetico
-//ordinamento
-let cfOrdinato = cf.sort();
-// stampa
-const ordinato = document.getElementById('ordinato');
-ordinato.innerHTML = "<h3>Codici Fiscali Ordinati</h3>";
-cfOrdinato.forEach((cfs,i,cf) => (
-    ordinato.innerHTML += `${cfs}<br>`
-));
+// Ordinare i codici fiscali in ordine alfabetico
+// Suddividere l'array padre in n (iniziale)
 
-// 2 - Suddivisione dell'array in n parti
-// divisione
-const cfDivisi = {
-  "A":[],
-  "B":[],
-  "C":[],
-  "D":[],
-  "E":[],
-  "F":[],
-  "G":[],
-  "H":[],
-  "I":[],
-  "L":[],
-  "M":[],
-  "N":[],
-  "O":[],
-  "P":[],
-  "Q":[],
-  "R":[],
-  "S":[],
-  "T":[],
-  "U":[],
-  "V":[],
-  "Z":[]
-};
-cf.forEach((cfs,i,cf) => {
-    iniziale = cfs.charAt(0)
-    for(let k in cfDivisi) {
-        if(iniziale===k) {
-            cfDivisi[k].push(cfs);
-            return;
-        }
-    };
-});
-// stampa
-const suddiviso = document.getElementById('suddiviso');
-for (let k in cfDivisi) {
-  if(cfDivisi[k].length > 0) {
-    suddiviso.innerHTML += `<br><b>${k}</b><br>`;
-    cfDivisi[k].forEach(cfs => {
-        suddiviso.innerHTML += `${cfs}, `;
-    });
-  }
-    
-}
+// Update header text
+document.querySelector('#header').innerHTML = message
+
+// Log to console
+console.log(message)
