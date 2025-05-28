@@ -1,14 +1,3 @@
-const message = 'Hello world' // Try edit me
-
-
-const messages = [];
-
-messages.push("ciao");
-
-if( "ciao" === "Ciao") {
-
-}
-
 const cf = [
     "RSSMRA85M01H501Z",
     "BNCLRD90A22F205X",
@@ -38,10 +27,18 @@ const cf = [
 ];
 
 // Ordinare i codici fiscali in ordine alfabetico
+console.log(cf);
+    cf.sort();
+console.log(cf);
+
 // Suddividere l'array padre in n (iniziale)
-
-// Update header text
-document.querySelector('#header').innerHTML = message
-
-// Log to console
-console.log(message)
+const arrayDiArray=[]
+for(let n="A".charCodeAt(0);n<="Z".charCodeAt(0);n++){
+		//console.log(String.fromCharCode(n));
+    let arrayLettera=[];
+    for (let i=0; i<cf.length;i++){
+        if(cf[i].split("")[0]===String.fromCharCode(n)) arrayLettera.push(cf[i]);
+    }
+    arrayDiArray.push(arrayLettera);
+}
+console.log(arrayDiArray);
