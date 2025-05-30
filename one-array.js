@@ -32,13 +32,10 @@ console.log(cf);
 console.log(cf);
 
 // Suddividere l'array padre in n (iniziale)
-const arrayDiArray=[]
+let arrayDiArray=[] //const non si puo usare perchè nel codice adesso cambi riferimento
+//  se vuoi usare const poi sostituire la linea di codice con arrayDiArray.push(arrayLettera)
 for(let n="A".charCodeAt(0);n<="Z".charCodeAt(0);n++){
-		//console.log(String.fromCharCode(n));
-    let arrayLettera=[];
-    for (let i=0; i<cf.length;i++){
-        if(cf[i].split("")[0]===String.fromCharCode(n)) arrayLettera.push(cf[i]);
-    }
-    arrayDiArray.push(arrayLettera);
+    let arrayLettera= cf.filter(a => a.charCodeAt(0)===n)
+    arrayDiArray = [...arrayDiArray,arrayLettera];
 }
 console.log(arrayDiArray);
